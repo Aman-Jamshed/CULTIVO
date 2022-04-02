@@ -1,0 +1,33 @@
+{% extends 'base.html' %} {% block content %}
+
+<style>
+    body {
+    background:#095e40 url(https://cdn.pixabay.com/photo/2020/07/13/08/15/cereals-5399962_960_720.jpg)no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding-top: 0px;
+  }
+    
+  .mt-0 {
+  margin-top: 30 !important;
+}
+</style>
+
+
+
+
+
+<div class="container mx-auto my-9 h-9 " style="margin-top: 250px;margin-bottom: 480px;">
+  <div class="row">
+    <div class="card border-dark mb-3" style="max-width: 2500rem;">
+      <div class="col-sm py-2 py-md-3">
+          <div class="card text-white bg-dark card-body" style="justify-content: center;">
+               <h1 class="text-center"><b>You should grow <i>{{ prediction }} </i>in your farm</b></h1>
+          </div>
+      </div>
+  </div>
+</div>
+</div>
+{% endblock content %}

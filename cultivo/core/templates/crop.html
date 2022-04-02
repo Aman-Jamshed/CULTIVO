@@ -1,0 +1,146 @@
+{% extends 'base.html' %} 
+{% block content %}
+
+<style>
+
+    html body {
+      background-image: url('../static/img/bg-1.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      
+
+      
+  }
+  
+
+  
+</style>
+<!--Form Section-->
+<br /><br />
+<br /><br />
+
+<h2 style="text-align: center; margin: 0px; color: rgb(235, 232, 220)">
+    <b>Discover the best crop to grow on your farm</b>
+</h2>
+<br />
+
+<div
+  style="
+    width: 350px;
+    height: 50rem;
+    margin: 0px auto;
+    color: #b4e2d0;
+    border-radius: 25px;
+    padding: 10px 10px;
+  "
+>
+  <form method="POST" action="/crop/crop-predict">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="Nitrogen" style="font-size: 17px"><b>Nitrogen</b></label>
+      <input
+        type="number"
+        class="form-control"
+        id="Nitrogen"
+        name="nitrogen"
+        placeholder="Enter the value (example:50)"
+        style="font-weight: bold"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="Phosphorous" style="font-size: 17px"
+        ><b>Phosphorous</b></label
+      >
+      <input
+        type="number"
+        class="form-control"
+        id="Phosphorous"
+        name="phosphorous"
+        placeholder="Enter the value (example:50)"
+        style="font-weight: bold"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="Pottasium" style="font-size: 17px"><b>Pottasium</b></label>
+      <input
+        type="number"
+        class="form-control"
+        id="Pottasium"
+        name="pottasium"
+        placeholder="Enter the value (example:50)"
+        style="font-weight: bold"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="ph" style="font-size: 17px"><b>ph level</b></label>
+      <input
+        type="number"
+        step="0.01"
+        class="form-control"
+        id="ph"
+        name="ph"
+        placeholder="Enter the value"
+        style="font-weight: bold"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="Rainfall" style="font-size: 17px"><b>Rainfall (in mm)</b></label>
+      <input
+        type="number"
+        step="0.01"
+        class="form-control"
+        id="Rainfall"
+        name="rainfall"
+        placeholder="Enter the value"
+        style="font-weight: bold"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="State" style="font-size: 17px "><b>State</b></label>
+      <select
+        onchange="print_city('state', this.selectedIndex);"
+        id="sts"
+        name="stt"
+        class="form-control"
+        style="font-weight: bold; color: rgb(100, 95, 95);"
+        
+        required
+      ></select>
+      <br />
+      <label for="City" style="font-size: 17px"><b>City</b></label>
+      <select
+        id="state"
+        class="form-control"
+        name="city"
+        style="font-weight: bold; color: rgb(100, 95, 95);"
+        required
+      ></select>
+      <script language="javascript">
+        print_state("sts");
+      </script>
+    </div>
+
+    <div class="d-flex justify-content-center mt-3">
+      <button
+        type="submit"
+        class="btn btn-success"
+        style="color: #1b1f1b; font-weight: bold; width: 130px; height:50px; border-radius:12px; font-size: 21px;"
+      >
+        Predict
+      </button>
+    </div>
+  </form>
+</div>
+
+
+
+
+
+{% endblock content %}

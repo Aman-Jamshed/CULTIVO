@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<body>
+          <header>
+            <style>
+
+            body {
+              background:#eff3f1 url()no-repeat center center fixed;
+              -webkit-background-size: cover;
+              -moz-background-size: cover;
+              -o-background-size: cover;
+              background-size: cover;
+              padding-top: 0px;
+            }
+            .card {
+              margin-top: 500px;
+
+          }
+           #image {
+             margin-left: 0.5px;
+           }
+          
+
+          
+
+          .fb-comments {
+            width: fit-content;
+            position: right;
+          }
+
+          .suggest {
+            text-align: center;
+          }
+          
+          
+          </style>
+          </header>
+</body>
+
+
+<br> </br>
+
+
+<div class="container-md" style="margin-top:20px;">
+  
+    <div class="card border-success mb-5 pt-100" style="max-width: 5000px;margin-top:60px;margin-left:60px;margin-right: 100px;">
+          <div class="row g-0">
+                <div class="row row-cols-1 row-cols-md-50 g-1" id="image">
+                  <img src="{{ question.image.url }}" class="img-fluid rounded-start mb-100"   alt="...">
+                </div>
+                <div class="col-md-15 text-center">
+                          <div class="card-body ">
+                            <h5 class="card-title">{{ question.title}}</h5>
+                            <p class="card-text">{{ question.content}}</p>
+                            <p class="card-text"><small class="text-active"><b>Author: </b><span class="author">{{ question.author }}</span></small><br><small class="text-muted">{{ question.timeStamp }}</small></p>
+                            
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                              {% if user.is_authenticated %}
+                                    {% if user.id == question.author.id %}
+                                            <a class="btn btn-success" href="/question/{{question.sno}}/edit" role="button">Edit</a>
+                                            <a class="btn btn-danger" href="/question/{{question.sno}}/delete" role="button">Delete</a>
+
+                                    {% endif %}
+                              {% endif %}
+                            </div>
+                          </div>
+                </div>
+
+          </div>
+        
+      </div>
+    
+
+    
+
+
+
+  <hr class="my-2 mx-10" />
+  <h5 class="suggest"><b>All Suggestions </b>  🤖</h5>
+
+   <hr class="my-2 mx-10" />
+
+        <div class="card mb-5 pt-100 " style="max-width: 1150px;margin-top:30px;margin-left:60px;"  >
+              <div class="row g-0">
+                    <div class="col-md-8">
+                          <div class="card-body">
+                            <p class="card-text">
+                            <div class="fb-comments" style="padding-left: 320px;" data-href="http://127.0.0.1:8000/question/{{question.pk}}" data-width="100%" data-numposts="5"></div>
+                            </p>
+
+                    
+                            
+                          </div>
+                    </div>
+              </div>
+          
+        
+        </div>
+  
+
+</div>
+
+
+
+  <!-- ------------------------------------------------------------------------------------------ -->
+
+
+  
+
+
+
+
+
+
+
+    
+    
+{% endblock content %}
+       

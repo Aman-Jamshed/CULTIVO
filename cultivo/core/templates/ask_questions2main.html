@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+ <center>
+          <h1>Add question to database</h1>
+          <br><br/>
+          {% if submitted %}
+                              
+                 Your form submitted succesfully             
+                          
+          {% else %}
+          
+          <form action="" method="POST" enctype="multipart/form-data">
+              {% csrf_token %}
+      
+              {{ form.as_p }}
+              <input type="submit" value="Submit" class="btn btn-success">
+          </form>
+
+          {% endif %}
+      
+          
+          
+      </center>
+
+<!-- codemy video of django see how he has styled the code -->
+
+
+
+
+
+{% endblock %}

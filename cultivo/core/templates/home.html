@@ -1,0 +1,350 @@
+
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+<body>
+        <!--Main Navigation-->
+    <header>
+      <style>
+        /* Carousel styling */
+        #introCarousel,
+        .carousel-inner,
+        .carousel-item,
+        .carousel-item.active {
+          height: 100vh;
+        }
+
+        .carousel-item:nth-child(1) {
+          background-image: url('../static/img/3.jpg');
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center center;
+        }
+        .carousel-item:nth-child(2) {
+          background-image: url('../static/img/2.jpg');
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center center;
+        }
+        .carousel-item:nth-child(3) {
+          background-image: url('../static/img/4.jpg');
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center center;
+        }
+
+        /* Height for devices larger than 576px */
+        @media (min-width: 992px) {
+          #introCarousel {
+            margin-top: -58.59px;
+          }
+          #introCarousel,
+          .carousel-inner,
+          .carousel-item,
+          .carousel-item.active {
+            height: 100vh;
+          }
+        }
+
+        .schemes {
+          background-image: url('../static/img/5.jpg');
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center center;
+        }
+
+        .about-us-wrapper {
+  background: #f1f3f3;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.about-us-wrapper .icon-wrapper {
+  width: 70px;
+  height: 75px;
+  margin: 0 auto;
+  display: block;
+}
+
+.about-us-wrapper .icon-wrapper img {
+  height: 100px;
+}
+
+.about-us-wrapper h5 {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 18px;
+  color: #2c974b;
+  margin: 40px 0 0;
+}
+
+.about-us-wrapper p {
+  font-size: 16px;
+  font-weight: 500;
+  max-width: 300px;
+  margin: 20px auto;
+  line-height: 30px;
+}
+
+
+        
+      </style>
+
+  
+      
+
+      <!-- Carousel wrapper -->
+      <div id="introCarousel" class="carousel slide carousel-fade shadow-2-strong" data-mdb-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-mdb-target="#introCarousel" data-mdb-slide-to="0" class="active"></li>
+          <li data-mdb-target="#introCarousel" data-mdb-slide-to="1"></li>
+          <li data-mdb-target="#introCarousel" data-mdb-slide-to="2"></li>
+        </ol>
+
+        <!-- Inner -->
+        <div class="carousel-inner">
+          <!-- Single item -->
+          <div class="carousel-item active">
+            <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+              <div class="d-flex justify-content-center align-items-center h-100">
+                <div class="text-white text-center">
+                  <h1 class="mb-3">WELCOME TO CULTIVO</h1>
+                  <h5 class="mb-4">An initiative for farmers!</h5>
+                  <a
+                    class="btn btn-outline-light btn-lg m-2"
+                    href="crop/"
+                    role="button"
+                    rel="nofollow"
+                    target="_blank"
+                    >Predict Crop Now</a
+                  >
+
+                  
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Single item -->
+          <div class="carousel-item">
+            <div class="mask" style="background-color: rgba(0, 0, 0, 0.3);">
+              <div class="d-flex justify-content-center align-items-center h-100">
+                <div class="text-white text-center">
+                  <h1 class="mb-3">ASK ANY QUERY HERE!</h1>
+
+                  <a
+                  class="btn btn-outline-light btn-lg m-2"
+                  href="/question"
+                  role="button"
+                  rel="nofollow"
+                  target="_blank"
+                  >Click Me</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Single item -->
+          <div class="carousel-item">
+            <div
+              class="mask"
+              style="
+                background: linear-gradient(
+                  45deg,
+                  rgba(29, 236, 197, 0.7),
+                  rgba(91, 14, 214, 0.7) 100%
+                );
+              "
+            >
+              <div class="d-flex justify-content-center align-items-center h-100">
+                <div class="text-white text-center">
+                  <h1 class="mb-3">VIEW ALL QUESTIONS AND HELP OTHERS</h1>
+                  <a
+                    class="btn btn-outline-light btn-lg m-2"
+                    href="/allques"
+                    target="_blank"
+                    role="button"
+                    >View All Questions</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Inner -->
+
+        <!-- Controls -->
+        <a class="carousel-control-prev" href="#introCarousel" role="button" data-mdb-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#introCarousel" role="button" data-mdb-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      <!-- Carousel wrapper -->
+    </header>
+    <!--Main Navigation-->
+
+    <hr class="my-5" />
+        <hr class="my-5" />
+
+
+        <div class="about-us-wrapper" id="info-wrapper">
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-4 highlight-block">
+                      <div class="icon-wrapper">
+                          <img src="../static/img/agriculture.png" />
+                      </div>
+                      <h5>Facts</h5>
+                      <p>
+                        Farming is a huge boon to our economy that means it is one of the major sectors that influences a country’s economic growth. In India, farmers are considered to be the backbone of the country. Around 52% of the Indian population account to farmers having agriculture as the sole occupation.
+                        Unfortunately, today’s agriculture policies fail to recognize how crop choices, input costs. India needs to shift from basic farming to more efficient, sustainable, and productive farming.
+                      </p>
+                  </div>
+                  <div class="col-md-4 highlight-block">
+                      <div class="icon-wrapper">
+                          <img src="../static/img/woman.png" />
+                      </div>
+                      <h5>Solution</h5>
+                      <p>
+                        In order to mitigate the agrarian crisis in the current status quo, there is a need for better recommendation systems to alleviate the crisis by helping the farmers to make an informed decision before starting the cultivation of crops.
+                        It is essential to the success of the society as a whole, without farming everyone would be forced to hunt and gather food, and it is not possible for the world’s population to survive off such an eating style.
+
+
+                      </p>
+                  </div>
+                  <div class="col-md-4 highlight-block">
+                      <div class="icon-wrapper">
+                          <img src="../static/img/idea.png" />
+                      </div>
+                      <h5>Our Idea</h5>
+                      <p>
+                          It's just a small initiative. Our main aim is to recommend optimum crops to be cultivated by farmers based on several parameters and help them make an informed decision before cultivation.
+                          It's an interactive platform where the farmers can communicate as it is easily understandable. It a start of building all in one solution for the farmers.Through this platform relatively less experienced farmers can solve their queries, doubts and questions also.
+                          
+
+
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+    <!--Main layout-->
+    <main class="mt-5">
+      <div class="container">
+        <!--Section: Content-->
+        <section>
+          <!-- --------------------------------------------------------------- -->
+          
+          <!-- ----------------------------------------------------------------- -->
+
+
+
+
+
+
+
+         
+        <!--Section: Content-->
+
+        <hr class="my-5" />
+        <hr class="my-5" />
+
+        <!--Section: Content-->
+        <section class="text-center">
+          <h4 class="mb-5"><strong>SCHEMES FOR FARMERS</strong></h4>
+
+          <div class="row">
+            <div class="col-lg-4 col-md-12 mb-4">
+              <div class="card">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                  <img
+                    src="../static/img/slider3.png"
+                    class="img-fluid"
+                  />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                  </a>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title"><strong>Soil Health Card Scheme</strong></h5>
+                  <br>
+    
+                  <p class="card-text">
+                    Designed and Developed by National Informatics Centre.
+                    Other related information for generation of Soil Health Cards have been provided by Indian Council of Agricultural Research.
+                  </p>
+                  <a href="https://soilhealth.dac.gov.in/" style="background-color: #095e40;" class="btn btn-success">See here.</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                  <img
+                    src="../static/img/slider8.png"
+                    class="img-fluid"
+                  />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                  </a>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title"><strong>National Mission for Sustainable Agriculture</strong></h5>
+                  <br>
+                  <p class="card-text">
+                    NMSA aims at aim at promoting sustainable agriculture through a series of adaptation measures focusing on Indian agriculture.
+                  </p>
+                  <a href="https://nmsa.dac.gov.in/" style="background-color: #095e40;" class="btn btn-success">See here.</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                  <img
+                    src="../static/img/slider9.jpg"
+                    class="img-fluid"
+                  />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                  </a>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title"><strong>Pradhan Mantri Krishi Sinchai Yojana</strong></h5>
+                    <br>
+                  <p class="card-text">
+                   Pradhan Mantri Krishi Sinchayee Yojana (PMKSY) has been formulated with the vision of extending the coverage of irrigation ‘Har Khet ko pani’ by Government of India.
+                  </p>
+                  <a href="https://pmksy.gov.in/" style="background-color: #095e40;" class="btn btn-success">See here.</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!--Section: Content-->
+
+        <hr class="my-5" />
+        <!--Section: Content-->
+      </div>
+    </main>
+    <!--Main layout-->
+
+    
+    
+    
+  </body>
+  
+{% endblock %}

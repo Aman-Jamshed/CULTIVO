@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<style>
+  body {
+    background:#095e40 url(https://cdn.pixabay.com/photo/2016/11/21/14/26/woman-1845693_960_720.jpg)no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding-top: 0px;
+  }
+
+</style>
+  
+<div class="container-md" style="margin-top:20px;">
+  <!--Section: Content-->
+<section class="mb-5">
+  <h4 class="mb-5 text-center"><strong>Facilis consequatur eligendi</strong></h4>
+
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title text-center"><strong>ASK QUESTION</strong> </h5>
+          {% if submitted %}
+             Your Question was submitted succesfully
+
+          {% else %}
+            <p class="card-text">
+              <form action="{% url 'question' %} " method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <!-- Name input -->
+                <div class="form-control">
+                <div class="form-outline mb-4">
+                  
+                    {{ form.title }}
+                  
+                  
+                  <label class="form-label" for="form3Example3">Enter Question</label>
+                </div>
+              </div>
+              <div class="form-control">
+                <div class="form-group form-outline mb-4">
+                  <div class="form-control">
+                    {{ form.image }}
+                  </div>
+                </div>
+                 
+                  
+
+                </div>
+                <div class="form-control">
+                <div class="form-group form-outline mb-4">
+                  
+                    {{ form.content }}
+                  </div>
+                  
+                  <label class="form-label" for="form3Example3">Description</label>
+
+                </div>
+              
+                <!-- Submit button -->
+                <button type="submit" style="background-color: #095e40;" class="btn btn-success btn-block mb-4">Send</button>
+              </form>
+            </p>
+
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+{% endblock content %}
+
+

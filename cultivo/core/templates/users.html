@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+
+    
+    .profile {
+        margin-top: 100px;
+        margin-bottom: 150px;
+        margin-left: 100px;
+    }
+
+    .second {
+        margin-left: 80px;
+        margin-top: 100px;
+    }
+	.profile-pic{
+		max-width: 200px;
+		max-height:200px;
+        margin: 0 auto;
+		margin-top: 30px;
+		/* margin-top: 10px;
+		margin-bottom: 20px;
+		margin-left: 10px;
+		margin-right: 10px; */
+		border-radius: 50%;
+	}
+	.card {
+        
+        border-radius: 3%;
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+        border-color: red;
+        
+        border-width: 5px;
+		margin-bottom: 30px;
+    }
+
+	.update {
+		margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 10px;
+        
+        background-color: #1bc0e9;
+
+	}
+	.success {
+		color: green;
+	}
+    
+</style>
+
+<br>
+
+<div class="container">
+<div class="row">
+	<div class="col-md-4">
+		<div class="card card-body profile" style="height: 400px;">
+			<a class="btn btn-warning" href="{% url 'home' %}"> &#8592; Back to Home</a>
+			<hr>
+			<h3 style="text-align: center"><strong>Account Settings</strong> </h3>
+			<hr>
+
+            
+			<img class="profile-pic" src="{{request.user.farmeruser.profile_pic.url}}" >
+		
+		</div>
+	</div>
+	<div class="col-md-8">
+		<div class="card border-dark  text-dark bg-light " style="width: 500px;margin-left: 100px;margin-bottom: 30px; margin-top: 100px;">
+
+			
+				
+				<form method="POST" action="" enctype="multipart/form-data">
+					{% csrf_token %}
+					
+					<div class="form-group">
+							<label for="exampleDataList" class="form-label" style="margin-left: 9px;"><strong>Name</strong></label>
+
+							{{ form.name }}
+					</div>
+					<br>
+					<div class="form-group">
+							<label for="number" class="form-label" style="margin-left: 9px;"><strong>Mobile Number</strong></label>
+
+							{{ form.phone }}
+					</div>
+					<br>
+					<div class="form-group">
+						<label for="staticEmail" class="col-sm-2 col-form-label" style="margin-left: 9px;margin-right: 2px;"><strong>Email</strong></label>
+						{{ form.email}}
+				</div> 
+				<br>
+				<div class="form-group">
+						<label for="formFile" class="form-label"  style="margin-left: 9px;"><strong>Upload Image</strong></label>
+
+						{{ form.profile_pic }}
+				
+
+				</div>
+				<br>
+			
+				<input class="btn btn-primary update" type="submit" name="Update Information" value="Update">
+				</form>
+				
+
+
+			
+		</div>
+	</div>
+	{% if messages %}
+				{% for message in messages %}
+				<div class="alert alert-success alert-dismissible fade show" role="alert">
+					<span class="success"> {{ message }}</span>
+					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+				  </div>
+				    
+
+				{% endfor %}
+
+				{% endif %}
+    
+</div>
+</div>
+
+
+
+
+
+
+{% endblock %}

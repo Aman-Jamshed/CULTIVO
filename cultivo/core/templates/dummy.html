@@ -1,0 +1,603 @@
+<li class="nav-item">
+  <div id="google_translate_element"></div>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" ></script>
+</li>
+
+
+https://cdn.pixabay.com/photo/2016/11/21/14/57/wheat-1845835_960_720.jpg
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="card text-center">
+        <div class="card-header">
+          Featured
+        </div>
+        <div class="card-body " style="margin-top:60px;margin-left:60px;width:70em;">
+          <h5 class="card-title">{{ question.name }}</h5>
+          <div>
+          <img src="{{ question.image.url }}" class="img-fluid" alt="...">
+        </div>
+
+          <p class="card-text">{{ question.description }} With supporting text below as a natural lead-in to additional content.</p>
+
+          <p>
+            <em>Submitted by:<a href="/profile">{{ question.user.name }}</a></em>
+        </p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+        <div class="card-footer text-muted">
+            {{ question.created }}
+        </div>
+      </div> -->
+
+
+
+
+
+      {% for question in questions %}
+                    
+                    
+                    
+
+      <div
+          class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-white"
+          style="background-image: url('{{ question.image.url }}');"
+          >
+          <h1 class="mb-3 h2">{{ question.name }}</h1>
+
+          <p>
+              {{ question.description }}
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus praesentium
+              labore accusamus sequi, voluptate debitis tenetur in deleniti possimus modi voluptatum
+              neque maiores dolorem unde? Aut dolorum quod excepturi fugit.
+          </p>
+          <a href="/question/{{ question.id }}" class="btn btn-primary">Button</a>
+      </div>
+
+
+
+      <div
+                                class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-white"
+                                style="background-image: url('{{ question.image.url }}');"
+                                >
+                                <h1 class="mb-3 h2">{{ question.name }}</h1>
+
+                                <p>
+                                    {{ question.description }}
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus praesentium
+                                    labore accusamus sequi, voluptate debitis tenetur in deleniti possimus modi voluptatum
+                                    neque maiores dolorem unde? Aut dolorum quod excepturi fugit.
+                                </p>
+                                <a href="/question/{{ question.id }}" class="btn btn-primary">Button</a>
+                            </div>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <div class="show_question">
+    <div class="ui main text container segment " style="margin-top:60px;width:70em">
+        <div class="ui huge header" style="font-size:20px">{{ questions.name }}</div>
+        <div class="ui top attached ">
+            <div class="item">
+               <img class="ui centered round image" id="ques-img" src="{{ question.image.url }}">
+            </div>
+             <div class="content" id="content">
+                <span><strong>{{ question.created }}</strong></span>
+            </div>
+            <div>
+                 <hr>        
+            </div>
+            <div class="description">
+                <p>{{ questions.description }}</p>
+                <p>
+                    <em>Submitted by:<a href="/profile">{{ question.user.name }}</a></em>
+                </p>
+            </div>
+           
+                <a class ="ui green button" href="">Edit question</a>
+                <form id="delete-form-exp" action="" method="POST">
+                    <button class="ui red button">Delete</button>
+                </form>
+           
+        </div>
+    </div>
+     -->
+
+
+
+
+
+
+
+
+
+     <footer class="bg-dark text-center text-white ">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+          
+          <!-- Section: Social media -->
+          <section class="mb-4">
+            <!-- Facebook -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+      
+            <!-- Twitter -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+              ><i class="fab fa-twitter"></i
+            ></a>
+      
+            <!-- Google -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+              ><i class="fab fa-google"></i
+            ></a>
+      
+            <!-- Instagram -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+              ><i class="fab fa-instagram"></i
+            ></a>
+      
+            <!-- Linkedin -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+      
+            <!-- Github -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+              ><i class="fab fa-github"></i
+            ></a>
+          </section>
+          <!-- Section: Social media -->
+       
+          
+          <p class="homelogo">
+          <p>Made with ❤️ by Aman</p>
+        </div>
+        <!-- Grid container -->
+      
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+          © Copyright 2021:
+          <a class="text-white" href="https://mdbootstrap.com/">Aman Jamshed</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+
+
+
+
+
+
+      question_id = models.AutoField
+    name = models.CharField(max_length=200, null=True)
+    image = models.ImageField(default="1.jpg", null=True, blank=True)
+
+    description = models.CharField(max_length=1000, null=True)
+
+
+    user = models.ForeignKey(UserModel, null=True, on_delete=models.SET_NULL)
+    date_created = models.DateField(auto_now_add= True, null=True
+
+
+
+
+
+    class Question(models.Model):
+    sno = models.AutoField(primary_key=True)
+    title = models.CharField(max_length=255)
+    image = models.ImageField(default="1.jpg", null=True, blank=True)
+
+    content = models.TextField()
+    author = models.CharField(max_length=130)
+    timeStamp = models.DateTimeField(blank=True)
+
+    
+
+    def __str__(self):
+        return self.title + ' by ' + self.author
+
+
+
+
+
+
+
+
+
+
+
+
+        <hr class="my-5" />
+
+        <section class="schemes mb-5">
+          <h4 class="mb-5 text-center" style="color: rgb(68, 83, 74);"><strong>SCHEMES</strong></h4>
+          <div class="container3">
+            <div class="row d-flex justify-content-center">
+              <div class="col-lg-4 col-md-12 mb-4">
+                <ul class="scheme-link">
+                  <li><span class="badge rounded-pill bg-light"><a href="https://soilhealth.dac.gov.in/">Health Card Scheme</a></span></li>
+                  <li><span class="badge rounded-pill bg-light "><a href="https://soilhealth.dac.gov.in/">Soil Health Card Scheme</a></span></li>
+                  <li><span class="badge rounded-pill bg-light "><a href="https://nmsa.dac.gov.in/">National Mission for Sustainable Agriculture </a></span></li>
+                  <li><span class="badge rounded-pill bg-light "><a href="https://pmksy.gov.in/">Pradhan Mantri Krishi Sinchai Yojana</a></span></li>
+                </ul> 
+              </div>
+              <div class="col-lg-4 col-md-12 mb-4">
+                <ul class="scheme-link">
+                  <li><span class="badge rounded-pill bg-light "><a href="https://pgsindia-ncof.gov.in/pkvy/index.aspx">Paramparagat Krishi Vikas Yojana </a></span></li>
+                  <li><span class="badge rounded-pill bg-light "><a href="https://www.enam.gov.in/">National Agriculture Market</a></span></li>
+                  <li><span class="badge rounded-pill bg-light "><a href="https://pmksy.gov.in/">Micro Irrigation Fund </a></span></li>
+                </ul>
+              </div>
+              
+            </div>
+        </section>
+
+
+        <hr class="my-5" />
+
+        <div class="row">
+          <div class="col-md-6 gx-5 mb-4">
+            <div class="bg-image hover-overlay ripple shadow-2-strong" data-mdb-ripple-color="light">
+              <img src="../static/img/IMG-8.jpg" class= "img-fluid" />
+              <a href="#!">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-md-6 gx-5 mb-4">
+            <h4><strong>OUR AIM</strong></h4>
+            <p class="text-muted">
+              In order to mitigate the agrarian crisis in the current status quo, there is a need for better recommendation systems to alleviate the crisis by helping the farmers to make an informed decision before starting the cultivation of crops.
+
+            </p>
+            <p><strong>Doloremque vero ex debitis veritatis?</strong></p>
+            <p class="text-muted">
+              Our main To recommend optimum crops to be cultivated by farmers based on several parameters and help them make an informed decision before cultivation
+            </p>
+          </div>
+        </div>
+      </section>
+
+
+
+      <button class="btn btn-success me-md-2 btn-sm" href="/question/{{question.sno}}/edit" type="button">Button</button>
+                              <button class="btn btn-danger btn-sm" type="button">Button</button>
+
+
+
+                              <div class="ui main text container segment">
+                                <div class="ui huge header">Edit <%= blog.title %></div>
+                                    <form class="ui form" action="/blogs/<%= blog._id %>?_method=PUT" method="POST">
+                                        <div class="field">
+                                            <label>Title</label>
+                                                <input type="text" name="blog[title]" value="<%= blog.title %>">
+                                        </div>
+                                        <div class="field">
+                                            <label>Image</label>
+                                                <input type="text" name="blog[image]" value="<%= blog.image %>">
+                                        </div>
+                                        <div class="field">
+                                            <label>Blog Content</label>
+                                            <textarea name="blog[body]"></textarea>
+                                        </div>
+                                        <input class="ui violet basic button" type="submit">
+                                    </form>
+                            </div>
+
+
+                            <!-- title = request.POST.get('title')
+            
+            content = request.POST.get('content')
+            question.title = title
+            question.content = content
+            question.save()
+            return redirect('/question/pk')
+
+            Question.objects.filter(sno=pk).first() -->
+
+
+            <div class="container-md" style="margin-top:200px;">
+
+    
+
+                        
+  
+
+  
+              <div class="card mb-3 pt-100" style="max-width: 5400px;margin-top:60px;margin-left:60px;">
+                  <div class="row g-0">
+                    
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h1 class="text-center"><b>You should grow <i>{{ prediction }} </i>in your farm</b></h1>
+            
+                           
+                        
+                        
+                        
+                        
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                              
+                              
+                              
+            
+                                      
+            
+            
+              
+            </div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <!-- def question(request):
+    
+    if request.method == "POST":
+        print(request.POST)
+        print(request.FILES)
+        form = QuestionForm(request.POST, request.FILES )
+        print(form.is_valid())
+        if form.is_valid():
+
+            form.save()
+            return HttpResponseRedirect('/question?submitted=True')
+    else:
+        form = QuestionForm
+        if 'submitted' in request.GET:
+            submitted = True
+
+    context = {'form': form, 'submitted': submitted}
+    return render(request, "ask_questions.html", context) -->
+            
+            
+    <!-- {% url 'question' %} -->
+
+
+
+
+    <!-- def question(request):
+    
+    if request.method == "POST":
+        print(request.POST)
+        print(request.FILES)
+        form = QuestionForm(data = request.POST )
+        print(form.is_valid())
+        if form.is_valid():
+
+            form.save()
+        return redirect(home)
+            
+    
+
+    context = {'form': QuestionForm }
+    return render(request, "ask_questions.html", context) -->
+
+
+
+
+
+
+
+    <!-- def question(request):
+    
+    if request.method == "POST":
+        print(request.POST)
+        print(request.FILES)
+        form = QuestionForm(request.POST, request.FILES)
+        print(form.is_valid())
+        
+    
+
+    context = {'form': QuestionForm }
+    return render(request, "ask_questions.html", context) -->
+
+
+    <!-- class QuestionForm(ModelForm):
+    class Meta:
+        model = Question
+        fields = ('title','image','content')
+
+        
+
+        widgets = {
+            'title': forms.TextInput(attrs={'class':'form-control'}),
+            'image':forms.ClearableFileInput(attrs={'class':'form-control'}),
+            'content': forms.Textarea(attrs={'class':'form-control'})
+        } -->
+
+
+
+
+
+
+
+
+
+        <!-- <center>
+          <h1>Add question to database</h1>
+          <br><br/>
+      
+          {% if submitted %}
+           Your question submitted succesfully. Wohoo!
+      
+          {% else %}
+          <form action="" method="POST" enctype="multipart/form-data">
+              {% csrf_token %}
+      
+              {{ form.as_p }}
+              <input type="submit" value="Submit" class="btn btn-success">
+          </form>
+      
+          {% endif %}
+          
+      </center> -->
+
+      <!-- <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="title">
+
+                      <label class="form-label" for="form3Example3">Enter Question</label>
+                    </div>
+
+
+                    <div class="mb-3">
+                    <label for="formFile" class="form-label">Default file input example</label>
+                    <input class="form-control" type="file" id="formFile">
+                    </div> -->
+
+
+
+
+                    <!-- 'author':forms.TextInput(attrs={'class':'form-control'}), -->
+
+
+
+                    <!-- {% extends 'base.html' %}
+
+
+                    {% block content %}
+                    
+                     <center>
+                              <h1>Add question to database</h1>
+                              <br><br/>
+                          
+                              {% if submitted %}
+                              
+                               {{ return redirect('/allques')}}
+                          
+                              {% else %}
+                              <form action="" method="POST" enctype="multipart/form-data">
+                                  {% csrf_token %}
+                          
+                                  {{ form.as_p }}
+                                  <input type="submit" value="Submit" class="btn btn-success">
+                              </form>
+                          
+                              {% endif %}
+                              
+                          </center>
+                    
+                    <!-- codemy video of django see how he has styled the code -->
+                    
+                    
+                    
+                    
+                    
+                    <!-- {% endblock %}  -->
+
+
+<!-- 
+                    {% extends 'base.html' %}
+
+                    {% load crispy_forms_tags %}
+                    
+                    {% block content %}
+                    
+                    <style>
+                        .rounded-circle {
+                            margin-top: 100px;
+                            width: 200px;
+                            height: 200px;
+                        }
+                    </style>
+                    
+                    
+                    
+                    <div class="card text-center">
+                        <div class="card-header">
+                          Featured
+                        </div>
+                        <div class="card-body">
+                          <h5 class="card-title">Special title treatment</h5>
+                          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                        <div class="card-footer text-muted">
+                          2 days ago
+                        </div>
+                      </div>
+                    
+                    <div class="content-section">
+                        <div class="media">
+                          <img class="rounded-circle account-img" src="{{ user.farmeruser.profile_pic.url }}">
+                          <div class="media-body">
+                            <h2 class="account-heading">{{ user.username }}</h2>
+                            <p class="text-secondary">{{ user.email }}</p>
+                          </div>
+                        </div>
+                        
+                       </div>
+                    
+                    
+                    {% endblock %} --> -->
+
+
+
+                    <!-- <div class="card text-center">
+                      <div class="card-header">
+                        Featured
+                      </div>
+                      <div class="card-body">
+                          <a class="btn btn-warning" href="{% url 'home' %}"> &#8592; Back to Profile</a>
+                          <hr>
+                        <h5 class="card-title">Account Settings</h5>
+                        <hr>
+                        <img class="profile-pic" src="{{request.user.farmeruser.profile_pic.url}}" >
+                  
+                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                      <!-- </div>
+                      <div class="card-footer text-muted">
+                        2 days ago
+                      </div>
+                    </div> --> -->
+
+
+
+
+                    <!-- {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-success alert-dismissible fade show msg" role="alert">
+                        <span class="success"> {{ message }}</span>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+                    </div>
+                        
+
+                    {% endfor %}
+
+                {% endif %}     -->
+                <!-- messages.success(request,  'Question Submitted Sucessfully!') -->
