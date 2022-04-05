@@ -12,12 +12,10 @@ necessities. As per some estimations, about 55% of the total population of India
 one of the biggest producers of agricultural products and still has very less farm productivity. We need to increase
 productivity so that farmers can get more pay from the same piece of land with less labour.  </p>
 
-## My Contribution
+## <img src="images/lightbulb.png" width='30'> SOLUTION
 <p>Cultivo application will propose help to farmers in determining the soil
 quality by doing analysis on its various parameters and will suggest crops based on the results obtained
-using Machine Learning approach. The system will use different classification algorithms because this is a
-classification problem and ensemble techniques in order to obtain an accurate and efficient model. The dataset will
-help in predicting if a crop is going to be profitable or not depending on various factors.</p>
+using Machine Learning approach. The system will use different classification algorithms and ensemble techniques in order to obtain an accurate and efficient model. The dataset will help in predicting if a crop is going to be profitable or not depending on various factors.</p>
 
 #### 
 [Download Dataset](https://www.kaggle.com/datasets/atharvaingle/crop-recommendation-datase) 
